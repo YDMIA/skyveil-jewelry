@@ -58,6 +58,16 @@
   .nav-item:hover { background: var(--bg-warm); color: var(--ink); }
   .nav-item.active { color: var(--ink); background: var(--bg-warm); }
   .nav-item svg { width: 15px; height: 15px; }
+  .nav-item.is-soon { opacity: 0.7; }
+  .nav-item.is-soon:hover { opacity: 1; }
+  .soon-tag { font-size: 9px; letter-spacing: 0.5px; text-transform: uppercase; padding: 1px 5px; border-radius: var(--radius-pill); background: var(--bg-warm); color: var(--ink-3); border: 1px solid var(--border); font-weight: 600; }
+
+  /* Preview banner */
+  .preview-banner { display: flex; align-items: center; gap: 10px; padding: 9px 20px; background: linear-gradient(90deg, rgba(241,157,124,0.12), rgba(211,123,255,0.10)); border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--ink-2); }
+  .preview-banner strong { color: var(--ink); font-weight: 600; }
+  .preview-banner a { color: var(--ink); font-weight: 600; text-decoration: underline; text-underline-offset: 2px; }
+  .pb-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 0 3px rgba(241,157,124,0.20); flex-shrink: 0; }
+  @media (max-width: 640px) { .preview-banner { font-size: 11px; padding: 7px 12px; } }
   .nav-right { display: flex; align-items: center; gap: 10px; }
   .pill { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; border-radius: var(--radius-pill); font-size: 12px; font-weight: 500; }
   .pill.support { color: var(--ink-2); background: var(--surface); border: 1px solid var(--border); }
@@ -180,6 +190,10 @@
 <div class="app">
 
   <!-- ===== Top Nav ===== -->
+  <div class="preview-banner" role="status">
+    <span class="pb-dot"></span>
+    <span><strong>Workspace preview</strong> — this is a static mockup. The full Skyveil Jewelry app (with all pages wired up) is launching at <a href="https://skyveil.ai" target="_blank" rel="noopener">skyveil.ai</a>.</span>
+  </div>
   <header class="topnav">
     <div class="brand">
       <div class="brand-mark">S</div>
@@ -187,30 +201,35 @@
       <span class="brand-tag">Workspace</span>
     </div>
     <nav class="nav-items">
-      <button class="nav-item active">
+      <a href="#" class="nav-item active" aria-current="page">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></svg>
         Workspace
-      </button>
-      <button class="nav-item">
+      </a>
+      <a href="https://skyveil.ai/gallery" class="nav-item is-soon" title="Coming soon — launches with the full skyveil.ai app">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>
         Gallery
-      </button>
-      <button class="nav-item">
+        <span class="soon-tag">Soon</span>
+      </a>
+      <a href="https://skyveil.ai/tutorial" class="nav-item is-soon" title="Coming soon — launches with the full skyveil.ai app">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
         Tutorials
-      </button>
-      <button class="nav-item">
+        <span class="soon-tag">Soon</span>
+      </a>
+      <a href="https://skyveil.ai/pricing" class="nav-item is-soon" title="Coming soon — launches with the full skyveil.ai app">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
         Membership
-      </button>
-      <button class="nav-item">
+        <span class="soon-tag">Soon</span>
+      </a>
+      <a href="https://skyveil.ai/promotion" class="nav-item is-soon" title="Coming soon — launches with the full skyveil.ai app">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M16 8h-6a2 2 0 1 0 0 4h4a2 2 0 1 1 0 4H8"/><path d="M12 18V6"/></svg>
         Rewards
-      </button>
-      <button class="nav-item">
+        <span class="soon-tag">Soon</span>
+      </a>
+      <a href="https://skyveil.ai/team" class="nav-item is-soon" title="Coming soon — launches with the full skyveil.ai app">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
         Team
-      </button>
+        <span class="soon-tag">Soon</span>
+      </a>
     </nav>
     <div class="nav-right">
       <span class="pill support"><span class="dot"></span> Live Support</span>
